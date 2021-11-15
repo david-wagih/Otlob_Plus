@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/submitpagestyle.css" />
+
+    <body>
+        <div class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Sign UP</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="input-group form-group">
+                                <input id="Fname" type="text" class="form-control" placeholder="First Name" />
+                            </div>
+                            <label id="Fnameval">Enter Your First Name</label>
+                            <div class="input-group form-group">
+                                <input id="Lname" type="text" class="form-control" placeholder="Last Name" />
+                            </div>
+                            <label id="Lnameval">Enter Your Last Name</label>
+                            <div class="input-group form-group">
+                                <label id="labeldbo" for="dateofbirth">Date Of Birth :</label>
+                                <input id="dob" type="date" class="form-control" />
+                            </div>
+                            <label id="dobvalidation">Enter Your date of Birth</label>
+                            <div class="input-group form-group">
+                                <input id="Password" type="password" class="form-control" placeholder="Password" />
+                            </div>
+                            <label id="passval">Enter Your Password</label>
+                            <div class="input-group form-group">
+                                <input id="CPassword" type="password" class="form-control" placeholder="Confirm Password" />
+                            </div>
+                            <label id="Cpassval">Confirm Password</label>
+                            <div id="btnrow" class="row">
+                                <div class="form-group col-6">
+                                    <button id="submit" type="button" value="Submit" class="btn login_btn">
+                    Sign UP
+                  </button>
+                                </div>
+                                <div class="form-group col-6">
+                                    <input type="reset" value="Reset" class="btn login_btn" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center links">
+                            already have an account?<a href="../html/login.html">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/submitpage.js"></script>
+    </body>
+</head>

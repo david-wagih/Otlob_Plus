@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemPrice" Type="Double" Nullable="false" />
+    <Property Name="RestaurantID" Type="Int32" Nullable="false" />
+    <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_Items_Restaurants" FromRole="Items" ToRole="Restaurants" />
+    <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItem_Items1" FromRole="Items" ToRole="OrderItem" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RestaurantID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="OrderPrice" Type="Double" Nullable="false" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="adminID" Type="Int32" />
+    <Property Name="Fees" Type="Double" Nullable="false" />
+    <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItem_Orders" FromRole="Orders" ToRole="OrderItem" />
+    <NavigationProperty Name="OStatu" Relationship="Self.FK_Orders_OStatus" FromRole="Orders" ToRole="OStatus" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_Orders_Restaurants" FromRole="Orders" ToRole="Restaurants" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Orders_Users" FromRole="Orders" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Orders_Users1" FromRole="Orders" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="OStatu">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_OStatus" FromRole="OStatus" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="RestaurantID" />
+    </Key>
+    <Property Name="RestaurantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RestaurantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RestaurantLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="isActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Items" Relationship="Self.FK_Items_Restaurants" FromRole="Restaurants" ToRole="Items" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Restaurants" FromRole="Restaurants" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="Type1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Type" FromRole="Type" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Users" FromRole="Users" ToRole="Orders" />
+    <NavigationProperty Name="Orders1" Relationship="Self.FK_Orders_Users1" FromRole="Users" ToRole="Orders" />
+    <NavigationProperty Name="Type" Relationship="Self.FK_Users_Type" FromRole="Users" ToRole="Type" />
+  </EntityType>
+  <EntityType Name="OrderItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="Quantity" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Item" Relationship="Self.FK_OrderItem_Items1" FromRole="OrderItem" ToRole="Items" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OrderItem_Orders" FromRole="OrderItem" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="adminview">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="RestaurantName" />
+      <PropertyRef Name="ItemName" />
+      <PropertyRef Name="ItemPrice" />
+      <PropertyRef Name="OrderPrice" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="RestaurantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemPrice" Type="Double" Nullable="false" />
+    <Property Name="OrderPrice" Type="Double" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reportview">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="RestaurantName" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="ItemName" />
+      <PropertyRef Name="ItemPrice" />
+      <PropertyRef Name="RestaurantID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="OrderPrice" />
+      <PropertyRef Name="CreationDate" />
+      <PropertyRef Name="ModifiedDate" />
+      <PropertyRef Name="isDeleted" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="RestaurantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemPrice" Type="Double" Nullable="false" />
+    <Property Name="RestaurantID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="OrderPrice" Type="Double" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="adminID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="userView">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="RestaurantName" />
+      <PropertyRef Name="ItemName" />
+      <PropertyRef Name="Quantity" />
+      <PropertyRef Name="CreationDate" />
+      <PropertyRef Name="OrderPrice" />
+      <PropertyRef Name="Fees" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="RestaurantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderPrice" Type="Double" Nullable="false" />
+    <Property Name="Fees" Type="Double" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Items_Restaurants">
+    <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="Items" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="RestaurantID" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="RestaurantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_Items1">
+    <End Role="Items" Type="Self.Item" Multiplicity="1" />
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItem_Orders">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderItem">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_OStatus">
+    <End Role="OStatus" Type="Self.OStatu" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Restaurants">
+    <End Role="Restaurants" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="RestaurantID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="RestaurantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Users1">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="adminID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Type">
+    <End Role="Type" Type="Self.Type" Multiplicity="1" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OtlobPlus1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Items" EntityType="Self.Item" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OStatus" EntityType="Self.OStatu" />
+    <EntitySet Name="Restaurants" EntityType="Self.Restaurant" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Types" EntityType="Self.Type" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="OrderItems" EntityType="Self.OrderItem" />
+    <EntitySet Name="adminviews" EntityType="Self.adminview" />
+    <EntitySet Name="reportviews" EntityType="Self.reportview" />
+    <EntitySet Name="userViews" EntityType="Self.userView" />
+    <AssociationSet Name="FK_Items_Restaurants" Association="Self.FK_Items_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_Items1" Association="Self.FK_OrderItem_Items1">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="OrderItem" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItem_Orders" Association="Self.FK_OrderItem_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderItem" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_OStatus" Association="Self.FK_Orders_OStatus">
+      <End Role="OStatus" EntitySet="OStatus" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Restaurants" Association="Self.FK_Orders_Restaurants">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Users" Association="Self.FK_Orders_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Users1" Association="Self.FK_Orders_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Type" Association="Self.FK_Users_Type">
+      <End Role="Type" EntitySet="Types" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <FunctionImport Name="AddnewOrder">
+      <Parameter Name="RestaurantID" Mode="In" Type="Int32" />
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="OrderPrice" Mode="In" Type="Double" />
+      <Parameter Name="StatusID" Mode="In" Type="Int32" />
+      <Parameter Name="CreationDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="isDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="adminID" Mode="In" Type="Int32" />
+      <Parameter Name="Fees" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="AddnewUser">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="dateOfBirth" Mode="In" Type="DateTime" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="FilterBydate" ReturnType="Collection(Model.FilterBydate_Result)">
+      <Parameter Name="value1" Mode="In" Type="DateTime" />
+      <Parameter Name="value2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="getallOrders" ReturnType="Collection(Model.getallOrders_Result)" />
+    <FunctionImport Name="getallUsers" ReturnType="Collection(Model.getallUsers_Result)" />
+    <FunctionImport Name="getItems" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="getOrder">
+      <Parameter Name="OrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getOrderByUserID" ReturnType="Collection(Int32)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getOrderStatus" ReturnType="Collection(Int32)">
+      <Parameter Name="OrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getRestaurants" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="getUser" ReturnType="Collection(Model.getUser_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="isAdminID" ReturnType="Collection(Boolean)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="isOrderDeleted">
+      <Parameter Name="OrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="isPasswordAuthenticated" ReturnType="Collection(Boolean)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Model.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Model.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="updateStatus">
+      <Parameter Name="OrderID" Mode="In" Type="Int32" />
+      <Parameter Name="StatusID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="FilterBydate_Result">
+    <Property Type="Int32" Name="OrderID" Nullable="false" />
+    <Property Type="Int32" Name="RestaurantID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="Double" Name="OrderPrice" Nullable="false" />
+    <Property Type="Int32" Name="StatusID" Nullable="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="isDeleted" Nullable="false" />
+    <Property Type="Int32" Name="adminID" Nullable="true" />
+    <Property Type="Double" Name="Fees" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getallOrders_Result">
+    <Property Type="Int32" Name="OrderID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="RestaurantName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ItemName" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="ItemPrice" Nullable="false" />
+    <Property Type="Double" Name="OrderPrice" Nullable="false" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="getallUsers_Result">
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="dateOfBirth" Nullable="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getUser_Result">
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="dateOfBirth" Nullable="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="TypeID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

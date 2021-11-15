@@ -1,0 +1,146 @@
+body {
+    background-color: #3b3b3b;
+    color: #ffffff;
+    font-family: sans-serif;
+}
+
+#submit {
+    padding-top: 5%;
+    padding-bottom: 10%;
+    text-align: center;
+}
+
+#reset {
+    padding-top: 5%;
+    padding-bottom: 10%;
+    text-align: center;
+}
+
+#e-mail {
+    padding-bottom: 5%;
+}
+
+#Address {
+    padding-bottom: 5%;
+}
+
+#Sector {
+    padding-bottom: 3%;
+}
+
+#Salary {
+    padding-bottom: 3%;
+}
+
+#EID {
+    padding-bottom: 3%;
+}
+
+h1 {
+    text-align: center;
+    color: red;
+}
+
+h2 {
+    padding-left: 7%;
+    color: rgb(217, 255, 0);
+    padding-bottom: 5%;
+}
+
+.marcoresponsivetable {
+    white-space: nowrap;
+    overflow: auto;
+    align-content: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%
+}
+
+.btn {
+    margin-right: 2%;
+}
+
+span {
+    color: rgb(255, 123, 0)
+}
+
+.theader {
+    color: rgb(255, 123, 0)
+}
+
+.updatebtn {
+    background-color: rgb(255, 123, 0);
+    border-color: rgb(255, 123, 0);
+}
+
+.dropbtn {
+    background-color: rgb(255, 123, 0);
+    border-color: rgb(255, 123, 0);
+    font-weight: bold;
+    color: white;
+}
+
+.Search {
+    margin: 15px;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+#myInput {
+    background-color: #393F44;
+    /* border-bottom: 2px solid rgb(255, 123, 0); */
+    color: orange;
+    font-weight: 500;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.datefrom,
+.dateto {
+    color: orange;
+    font-weight: 500;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.datefrom h4,
+.dateto h4 {
+    font-size: 15px;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: rgb(255, 123, 0)
+}
+
+input[type="date"] {
+    width: 300px;
+}
+
+.datefrom {
+    margin-left: 110px;
+}
+
+#exportButton {
+    position: absolute;
+    top: 20px;
+    left: 300px
+}
+
+#exportButton:hover {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.updatebtn:hover {
+    background-color: white;
+    color: black;
+    border: none;
+}

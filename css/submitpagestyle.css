@@ -1,0 +1,149 @@
+html,
+body {
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    height: 640px;
+    margin-top: 210px;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card-header h3 {
+    color: rgb(255, 125, 3);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: rgb(255, 125, 3);
+    color: black;
+    border: none;
+}
+
+#usericon,
+#keyicon {
+    margin-left: 5px;
+}
+
+#user,
+#key {
+    position: relative;
+    top: 4px;
+    margin-right: 9px;
+}
+
+#usertext,
+#keytext {
+    margin-bottom: 30px;
+    font-weight: 500;
+    border: none;
+}
+
+#usertext:focus,
+#keytext:focus {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: rgb(255, 125, 3);
+}
+
+.login_btn {
+    color: black;
+    background-color: rgb(255, 125, 3);
+    width: 100px;
+    margin-top: 20px;
+}
+
+#btnrow,
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
+    color: rgb(255, 125, 3);
+}
+
+.links a:hover {
+    color: white;
+}
+
+#btnrow {
+    margin-top: -30px;
+}
+
+.card-footer {
+    margin-top: -15px;
+}
+
+.row label {
+    position: relative;
+    top: -37px;
+    left: -35px;
+    color: rgb(255, 125, 3);
+    margin-top: 20px;
+}
+
+#dob {
+    position: relative;
+    left: -98px;
+    top: 4px;
+}
+
+#Fnameval,
+#Lnameval,
+#dobvalidation,
+#passval,
+#Cpassval {
+    display: none;
+    position: relative;
+    top: -30px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    margin-bottom: 15px
+}
+
+#labeldbo {
+    position: relative;
+    top: -38px;
+    color: rgb(255, 125, 3)
+}

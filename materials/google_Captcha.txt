@@ -1,0 +1,7 @@
+<div
+  class="g-recaptcha"
+  data-sitekey="6Lfjzj0cAAAAAMZX4q4UBX8ucj4tLWVjvLIG7g6Y"
+></div>
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

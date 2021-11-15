@@ -1,0 +1,108 @@
+html,
+body {
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    height: 430px;
+    margin-top: 390px;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card-header h3 {
+    color: rgb(255, 125, 3);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: rgb(255, 125, 3);
+    color: black;
+    border: 0;
+}
+
+#usericon,
+#keyicon {
+    margin-left: 5px;
+}
+
+#user,
+#key {
+    position: relative;
+    top: 4px;
+    margin-right: 9px;
+}
+
+#usertext,
+#keytext {
+    margin-bottom: 25px;
+    font-weight: 500;
+    border: none;
+}
+
+#usertext:focus,
+#keytext:focus {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: rgb(255, 125, 3);
+}
+
+.login_btn {
+    color: black;
+    background-color: rgb(255, 125, 3);
+    width: 100px;
+    margin-top: 20px;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
+    color: rgb(255, 125, 3);
+}
+
+.links a:hover {
+    color: white;
+}
+
+.paragraph {
+    position: relative;
+    top: -40px;
+}
+
+input[type="submit"] {
+    position: relative;
+    top: -30px;
+}

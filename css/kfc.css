@@ -1,0 +1,227 @@
+span {
+    color: rgb(255, 125, 3);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(../images/kfclogo.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.new {
+    width: 540px;
+    height: 320px;
+    margin: 10px;
+    background-color: #b1b1b1;
+}
+
+.search,
+.order {
+    width: 540px;
+    height: 150px;
+    margin: 10px;
+    background-color: #b1b1b1;
+    display: flex;
+    flex-direction: column;
+}
+
+.new p {
+    color: #ffffff;
+    line-height: 50px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.new p {
+    position: relative;
+    top: -90px;
+    font-size: 28px;
+    font-family: calibri;
+    font-weight: bold;
+}
+
+.new {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.7;
+    transition: all ease-in-out 0.2s;
+    margin-left: 40px;
+}
+
+.new button {
+    width: 120px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #ea272d;
+    text-align: center;
+    font-family: calibri;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.price button {
+    color: #ffffff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 70px;
+    height: 35px;
+    border-radius: 20px;
+    background-color: #ea272d;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.add button {
+    color: #ffffff;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 70px;
+    height: 35px;
+    border-radius: 20px;
+    background-color: rgb(255, 125, 3);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+#variety {
+    background-image: url(../images/variety_box.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#rizo {
+    background-image: url(../images/rizo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#twister {
+    background-image: url(../images/twister1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#bucket {
+    background-image: url(../images/Bucket.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.new:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.add button:hover {
+    color: black;
+    background-color: white;
+}
+
+.new p {
+    position: relative;
+    top: -70px;
+    left: -20px;
+}
+
+#nav {
+    margin-bottom: 70px;
+}
+
+#varietyboximg,
+#bucketboximg {
+    height: 115px;
+    width: 130px;
+}
+
+#rizoimg {
+    height: 120px;
+    width: 210px;
+}
+
+#addtocart {
+    background-color: rgb(255, 125, 3);
+    border: none
+}
+
+#addtocart:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black
+}
+
+#variety button {
+    position: relative;
+    left: -15px;
+    top: -50px
+}
+
+#rizo button {
+    margin-left: 20px;
+}
+
+#twister button {
+    margin-right: 60px;
+}
+
+#bucket button {
+    position: relative;
+    left: -15px;
+}
+
+* {
+    font-family: Brownies Regular;
+}
+
+#variety p,
+#rizo p,
+#twister p,
+#bucket p,
+.price button,
+.add button {
+    font-family: Brownies Regular
+}
+
+#twisterimg {
+    width: 220px;
+    height: 140px;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+}
+
+#my-cart-icon {
+    position: relative;
+    right: -730px;
+    top: 8px;
+}
+
+.navbar-nav a {
+    font-size: 20px;
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/Admin.css" />
+    <link rel="stylesheet" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+
+
+    <title>admin_page</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col Search">
+            <input id="myInput" type="text" placeholder="search" />
+        </div>
+        <div class=" datefrom col">
+            <h4>Date from</h4>
+            <input type="date" class="form-control" id="datefilterfrom" data-date-split-input="true">
+        </div>
+        <div class=" dateto col">
+            <h4>Date to</h4>
+            <input type="date" class="form-control" id="datefilterto" data-date-split-input="true">
+        </div>
+    </div>
+    </div>
+
+    <div class="marcoresponsivetable">
+        <table class="table-responsive table table-dark table-hover, table-bordered" id="emptable">
+            <thead class="theader">
+                <tr>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">User ID</th>
+                    <th scope="col">Restaurant Name</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Item Price</th>
+                    <th scope="col">Order Price</th>
+                    <th scope="col">Creation Date</th>
+                    <th scope="col">Modified Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="btn btn-primary updatebtn">Update</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="container">
+            <button id="exportButton" class="btn btn-lg btn-danger clearfix">
+        Export to PDF
+        </button>
+        </div>
+    </div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+    <script src="http://www.shieldui.com/shared/components/latest/js/jszip.min.js"></script>
+    <script>
+        jQuery(function($) {
+            $("#exportButton").click(function() {
+                // parse the HTML table element having an id=exportTable
+                var dataSource = shield.DataSource.create({
+                    data: "#emptable",
+                    schema: {
+                        type: "table",
+                        fields: {
+                            OrderID: {
+                                type: Number
+                            },
+                            UserID: {
+                                type: Number
+                            },
+                            RestaurantName: {
+                                type: String
+                            },
+                            ItemName: {
+                                type: String
+                            },
+                            ItemPrice: {
+                                type: Number
+                            },
+                            OrderPrice: {
+                                type: Number
+                            },
+                            CreationDate: {
+                                type: String
+                            },
+                            ModifiedDate: {
+                                type: String
+                            },
+                            Status: {
+                                type: String
+                            },
+                        },
+                    },
+                });
+
+                // when parsing is done, export the data to PDF
+                dataSource.read().then(function(data) {
+                    var pdf = new shield.exp.PDFDocument({
+                        author: "David",
+                        created: new Date(),
+                    });
+
+                    pdf.addPage("a4", "portrait");
+
+                    pdf.table(
+                        50,
+                        50,
+                        data, [{
+                                field: "OrderID",
+                                title: "Order ID",
+                                width: 40
+                            }, {
+                                field: "UserID",
+                                title: "User ID",
+                                width: 40
+                            }, {
+                                field: "RestaurantName",
+                                title: "Restaurant Name",
+                                width: 70
+                            }, {
+                                field: "itemName",
+                                title: "Item Name",
+                                width: 60
+                            }, {
+                                field: "ItemPrice",
+                                title: "Item Price",
+                                width: 40
+                            }, {
+                                field: "OrderPrice",
+                                title: "Order Price",
+                                width: 40
+                            }, {
+                                field: "CreationDate",
+                                title: "Creation Date",
+                                width: 50
+                            }, {
+                                field: "Status",
+                                title: "Order Status",
+                                width: 50
+                            }, {
+                                field: "ModifiedDate",
+                                title: "Modified Date",
+                                width: 50
+
+                            }
+
+
+                        ]);
+
+                    pdf.saveAs({
+                        fileName: "DavidPdf",
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

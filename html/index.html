@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../libraries/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Otlob Plus</title>
+</head>
+
+<body>
+    <div class="row">
+        <nav class="
+          navbar navbar-nav-scroll navbar-expand-lg
+          fixed-top
+          navbar-dark
+          bg-dark
+        ">
+            <div class="container-fluid col">
+                <a class="navbar-brand" href="#carouselExampleCaptions">Otlob <span>Plus</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="#carouselExampleCaptions"
+                >Home</a
+              >
+              <a class="nav-link" href="#restaurants">Our Restaurants</a>
+                <a class="nav-link" href="#About">About US</a>
+                <a class="nav-link" href="#contact">Contact US</a>
+            </div>
+    </div>
+    </div>
+    <div class="btncontainer">
+        <div class="loginsignup">
+            <a href="../html/login.html" id="login" class="btn btn-outline-success my-2 my-sm-0">Login</a
+            >
+            <a
+              href="../html/submitpage.html"
+              id="signup"
+              class="btn btn-outline-success my-2 my-sm-0"
+              >Sign up</a
+            >
+          </div>
+          <div class="personaldata">
+            <a
+              href="../html/User.html"
+              id="signup"
+              class="btn btn-outline-success my-2 my-sm-0"
+              >My Orders</a
+            >
+            <p id="welcomemsg">Welcome <span id="username"></span></p>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--this is our slider-->
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../images/pizza1.jpg" class="d-block w-100" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>What We DO?</h5>
+            <p>Offering you an ExtraOrdinary Service.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../images/food2.jpg" class="d-block w-100" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>What is this Service?</h5>
+            <p>Make it easy for you to Order Food Online.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../images/food3.jpg" class="d-block w-100" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Are We TrustWorthy?</h5>
+            <p>We think Days Will Show You</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- here is the Cards for our Restaurants -->
+    <div id="restaurants" class="headeraboutus">
+      <h1>Our Restaurants</h1>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100 border-danger mb-3 bg-dark">
+          <img
+            id="kfcimg"
+            src="../images/kfclogo.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body text-white bg-danger mb-3">
+            <h5 class="card-title">KFC</h5>
+            <p id="kfctext" class="card-text">
+              KFC is an American fast food restaurant chain headquartered in
+              Louisville, Kentucky that specializes in fried chicken. It is the
+              world's second-largest restaurant chain after McDonald's, with
+              22,621 locations globally in 150 countries as of December 2019
+            </p>
+          </div>
+          <div class="card-footer">
+            <a id="redbtn" href="../html/kfc.html" class="btn btn-danger"
+              >Order Now</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border-warning mb-3 bg-dark">
+          <img
+            id="macimg"
+            src="../images/mac.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body text-white bg-warning mb-3">
+            <h5 id="mactitle" class="card-title">McDonald's</h5>
+            <p class="card-text">
+              McDonald's is an American fast food company, founded in 1940 as a
+              restaurant operated by Richard and Maurice McDonald, in San
+              Bernardino, California, United States.
+            </p>
+          </div>
+          <div class="card-footer">
+            <a id="yellowbtn" href="../html/mac.html" class="btn btn-warning"
+              >Order Now</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border-success mb-3 bg-dark">
+          <img
+            id="papaimg"
+            src="../images/papabg.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body text-white bg-success mb-3">
+            <h5 class="card-title">Papa John's Pizza</h5>
+            <p id="papatext" class="card-text">
+              Papa John's is an American pizza restaurant franchise. It is the
+              fourth largest pizza delivery restaurant chain in the United
+              States, with headquarters in Jeffersontown, Kentucky, a suburb of
+              Louisville
+            </p>
+          </div>
+          <div class="card-footer">
+            <a id="greenbtn" href="../html/Pizza.html" class="btn btn-success"
+              >Order Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      this part is for About Us section
+    -->
+    <div class="headeraboutus">
+      <h1>About Us</h1>
+    </div>
+    <div id="About" class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100 mb-3 bg-dark">
+          <img
+            id="davidimg"
+            src="../images/IMG_6864.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div id="davidbody" class="card-body text-white mb-3">
+            <h5 class="card-title">David Wagih</h5>
+            <p id="kfctext" class="card-text">
+              I am 21 years Old and I am a computer engineer, going to graduate
+              from faculty of engineering Ain Shams University, My Passion is
+              Coding, Designing and Teaching Math.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 mb-3 bg-dark">
+          <img
+            id="abobakrimg"
+            src="../images/abobakr.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div id="davidbody" class="card-body text-white mb-3">
+            <h5 id="abobakrtitle" class="card-title">AboBakr</h5>
+            <p id="abobakrpara" class="card-text">
+              I am a software Engineer Whose Passion is about Problem Solving
+              and Coding.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 mb-3 bg-dark">
+          <img
+            id="marcoimg"
+            src="../images/marco.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div id="davidbody" class="card-body text-white mb-3">
+            <h5 class="card-title">Marco Ehab</h5>
+            <p id="papatext" class="card-text">
+              I am 21 years old and I am a software Engineer Whose Passion is
+              about Problem Solving and Coding,studying Informatics and Computer
+              Science in the BUE
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- contact us -->
+    <div id="contact" class="socialmedia">
+      <div id="contactrow" class="row">
+        <div>
+          <h1 class="contactus">Contact Us</h1>
+        </div>
+      </div>
+    </div>
+    <script src="../js/script.js"></script>
+    <script src="../../libraries/jquery-3.6.0.min.js"></script>
+    <script src="../../libraries/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

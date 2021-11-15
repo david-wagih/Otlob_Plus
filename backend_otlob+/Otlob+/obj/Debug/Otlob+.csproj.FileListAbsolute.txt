@@ -1,0 +1,2 @@
+E:\Programming\backend_otlob+\Otlob+\obj\Debug\Otlob+.csproj.AssemblyReference.cache
+E:\Programming\backend_otlob+\Otlob+\obj\Debug\Otlob+.csproj.CoreCompileInputs.cache

@@ -1,0 +1,281 @@
+* {
+    scroll-behavior: smooth;
+    font-family: "lemonada", sans-serif;
+}
+
+span {
+    color: rgb(255, 125, 3);
+}
+
+.navbar-nav a {
+    font-size: 1.2em;
+}
+
+#login,
+#signup {
+    color: white;
+    border-color: rgb(255, 125, 3);
+    font-size: 1.2em;
+}
+
+#login:hover,
+#signup:hover {
+    background-color: rgb(255, 125, 3);
+}
+
+.carousel-item {
+    height: 98vh;
+    min-height: 300px;
+    background: no repeat scroll center scroll;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.carousel-item::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.carousel-caption {
+    bottom: 180px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.carousel-caption h5 {
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.carousel-caption p {
+    font-size: 18px;
+    top: 2rem;
+}
+
+#kfcimg {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#macimg {
+    margin-top: 30px;
+    margin-bottom: 150px;
+}
+
+#papaimg {
+    margin-bottom: 230px;
+    margin-top: 60px;
+}
+
+.card-title {
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.card-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+
+#kfctext,
+#papatext {
+    color: white;
+}
+
+.navbar-nav-scroll {
+    overflow: visible;
+}
+
+.headeraboutus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212529;
+}
+
+.headeraboutus h1,
+.contactus {
+    color: white;
+    padding: 20px;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 50px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
+    color: rgb(255, 125, 3);
+}
+
+
+/* Set a specific color for each brand */
+
+
+/* Facebook */
+
+.fa-facebook {
+    background: black;
+    color: white;
+}
+
+
+/* Twitter */
+
+.fa-twitter {
+    background: black;
+    color: white;
+}
+
+.fa-youtube {
+    background: black;
+    color: white;
+}
+
+.fa-instagram {
+    background: black;
+    color: white;
+}
+
+.socialmedia,
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212529;
+}
+
+#facebook,
+#twitter,
+#youtube,
+#instagram {
+    margin: 5px;
+}
+
+.buttons {
+    display: block;
+}
+
+#redbtn,
+#yellowbtn,
+#greenbtn {
+    font-family: sans-serif;
+    position: relative;
+    left: 220px;
+    font-weight: 700;
+}
+
+#redbtn:hover,
+#yellowbtn:hover,
+#greenbtn:hover {
+    color: black;
+    background-color: white;
+}
+
+#mactitle {
+    color: black;
+}
+
+#davidimg,
+#abobakrimg,
+#marcoimg {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+#davidimg {
+    margin-bottom: 20px;
+}
+
+#davidimg,
+#abobakrimg,
+#marcoimg {
+    min-height: 25vh;
+}
+
+#davidimg:hover,
+#abobakrimg:hover,
+#marcoimg:hover {
+    box-shadow: 1px 2px 4px 1px rgb(255, 125, 3);
+    cursor: pointer;
+}
+
+#abobakrimg,
+#marcoimg {
+    margin-bottom: 20px;
+}
+
+#davidbody {
+    background-color: rgb(255, 125, 3);
+}
+
+#abobakrpara {
+    color: white;
+}
+
+#btnrow,
+#contactrow {
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #1b1b1b;
+    border: 1px solid #1b1b1b;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: 0 0 5px rgba(0, 233, 253, 1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 125, 3);
+    border-left: 2px solid #1b1b1b;
+}
+
+#welcomemsg {
+    color: white;
+}
+
+#username {
+    color: rgb(255, 125, 3);
+}
+
+.btncontainer {
+    display: flex;
+    justify-content: center;
+}
+
+.personaldata {
+    display: flex;
+}
+
+.personaldata a {
+    position: relative;
+    left: -15px;
+}
+
+.personaldata p {
+    font-size: 30px;
+}
+
+.loginsignup .btn {
+    position: relative;
+    left: -30px;
+}
